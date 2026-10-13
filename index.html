@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#6a6fd0">
+<title>Luna</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@300&family=Playpen+Sans+Arabic:wght@300;400&family=Nunito:wght@600;700;800&family=Noto+Sans+KR:wght@400;500;700&family=Tajawal:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- تدرجات الأيقونات -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="gFlame" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffa63d"/><stop offset="1" stop-color="#ff4f5e"/></linearGradient>
+    <linearGradient id="gMoon" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8aa0f5"/><stop offset="1" stop-color="#5b74e6"/></linearGradient>
+    <linearGradient id="gNav" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9684ee"/><stop offset="1" stop-color="#7a66e3"/></linearGradient>
+  </defs>
+</svg>
+
+<div class="device">
+
+  <!-- ========== 1) الترحيب ========== -->
+  <section class="screen" id="s-welcome">
+    <main class="stage" id="stage" aria-label="안녕!">
+      <img class="bg" alt="" src="assets/bg.webp">
+      <h1 class="hello" id="hello">안녕!</h1>
+      <p class="tag t1" id="t1" lang="ar">خطوات صغيرة،</p>
+      <p class="tag t2" id="t2" lang="ar">أحلام كبيرة</p>
+      <button class="go" id="go" type="button" aria-label="시작하기">
+        <span class="bloom"></span>
+        <span class="halo"></span>
+        <span class="face"><img alt="" src="assets/btn.webp"></span>
+      </button>
+    </main>
+  </section>
+
+  <!-- ========== 2) الرئيسية: اختيار المستوى والألعاب ========== -->
+  <section class="screen home" id="s-home" hidden aria-label="홈">
+    <div class="scroll" id="scroll">
+
+      <header class="head rise" style="--i:0">
+        <div class="avatar"><img alt="" src="assets/avatar.webp"></div>
+        <div class="who">
+          <h2 class="hi"><span>안녕, <bdi lang="ar">ميمي</bdi>!</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.4S3.6 15.3 3.6 9.2A4.6 4.6 0 0 1 12 6.6a4.6 4.6 0 0 1 8.4 2.6c0 6.1-8.4 11.2-8.4 11.2z"/></svg>
+          </h2>
+          <p class="sub">오늘도 공부하는 너, 멋져요!</p>
+        </div>
+        <button class="bell" id="bell" type="button" aria-label="알림">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 3.6c-3.3 0-5.6 2.5-5.6 5.8 0 3.9-1.6 5.3-2.4 6.4h16c-.8-1.1-2.4-2.5-2.4-6.4 0-3.3-2.3-5.8-5.6-5.8z" fill="#eef0ff" stroke="#6c78db" stroke-width="1.7" stroke-linejoin="round"/>
+            <path d="M10 19.3a2.1 2.1 0 0 0 4 0" stroke="#6c78db" stroke-width="1.7" stroke-linecap="round"/>
+            <circle cx="12" cy="3" r="1" fill="#6c78db"/>
+          </svg>
+        </button>
+      </header>
+
+      <div class="stats rise" style="--i:1">
+        <div class="peek"><img alt="" src="assets/cat.webp"></div>
+
+        <div class="stat s1">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.7 5.5 6.1.9-4.4 4.3 1 6.1L12 16.7 6.6 19.6l1-6.1L3.2 9.2l6.1-.9z" fill="#ffd27a" stroke="#f4a63c" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          <div class="lab">오늘의 카드</div>
+          <div class="val"><span id="vToday">0</span><small>/ 25</small></div>
+        </div>
+
+        <div class="stat s2">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12.4 2.2c.5 3 2.9 4.6 4.4 7.1 1.6 2.7 1 6.6-1.7 8.6-3.2 2.4-7.9 1-9-2.6-.7-2.4.3-4.5 1.9-6.3.2 1.6 1 2.5 2 2.8-.5-3.2.3-6.1 2.4-9.6z" fill="url(#gFlame)" stroke="#ee5638" stroke-width="1.1" stroke-linejoin="round"/>
+            <path d="M12.2 21.2c-2.1 0-3.7-1.4-3.7-3.3 0-1.7 1.3-2.7 2.4-4.1.3 1 .9 1.5 1.6 1.7.9-.9 1.1-2.1 1-3.2 1.5 1.3 2.4 2.9 2.4 4.5 0 2.5-1.7 4.4-3.7 4.4z" fill="#ffc94a"/>
+          </svg>
+          <div class="lab">연속 학습</div>
+          <div class="val"><span id="vStreak">0</span><small>일</small></div>
+        </div>
+
+        <button class="stat s3" id="allCards" type="button" aria-label="전체 카드">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 14.6A8.6 8.6 0 0 1 9.4 4.4a8.6 8.6 0 1 0 10.2 10.2z" fill="url(#gMoon)" stroke="#4660d6" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <div class="lab">전체 카드</div>
+          <div class="val"><span id="vTotal">0</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5.5l6.5 6.5L9 18.5"/></svg>
+          </div>
+        </button>
+      </div>
+
+      <div class="sec rise" style="--i:2">
+        <h2>내 학습</h2>
+        <button class="all" id="seeAll" type="button">전체보기
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5.5l6.5 6.5L9 18.5"/></svg>
+        </button>
+      </div>
+
+      <div class="list">
+        <button class="row r1 rise" style="--i:3" data-id="l1" type="button" aria-label="레벨 1 단어">
+          <span class="tile">
+            <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+              <path d="M12 25 11 8c0-1.6 1.2-2.1 2.4-1.2L25 14.5" fill="#ffeef5" stroke="#e8557f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+              <path d="M52 25 53 8c0-1.6-1.2-2.1-2.4-1.2L39 14.5" fill="#ffeef5" stroke="#e8557f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+              <path d="M9 31c0-9 10-15 23-15s23 6 23 15c0 12-9 21-23 21S9 43 9 31z" fill="#ffeef5" stroke="#e8557f" stroke-width="2.6"/>
+              <circle cx="22.5" cy="33" r="2" fill="#e8557f"/><circle cx="41.5" cy="33" r="2" fill="#e8557f"/>
+              <ellipse cx="16.5" cy="40" rx="4.4" ry="2.8" fill="#ffb3cb"/><ellipse cx="47.5" cy="40" rx="4.4" ry="2.8" fill="#ffb3cb"/>
+              <path d="M28.6 39.5q3.4 3.2 3.4-.8 0 4 3.4.8" stroke="#e8557f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="body">
+            <span class="line"><span class="name">레벨 1 단어</span><span class="cnt" id="c-l1">0 / 836</span></span>
+            <span class="track"><span class="fill" id="f-l1"></span></span>
+          </span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5.5l6.5 6.5L9 18.5"/></svg>
+        </button>
+
+        <button class="row r2 rise" style="--i:4" data-id="l2" type="button" aria-label="레벨 2 단어">
+          <span class="tile">
+            <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+              <path d="M6 15c9-3.6 18-3.1 26 2v34c-8-5.1-17-5.6-26-2z" fill="#e8edff" stroke="#4a68d8" stroke-width="2.8" stroke-linejoin="round"/>
+              <path d="M58 15c-9-3.6-18-3.1-26 2v34c8-5.1 17-5.6 26-2z" fill="#e8edff" stroke="#4a68d8" stroke-width="2.8" stroke-linejoin="round"/>
+              <circle cx="49" cy="26" r="1.8" fill="#4a68d8"/>
+            </svg>
+          </span>
+          <span class="body">
+            <span class="line"><span class="name">레벨 2 단어</span><span class="cnt" id="c-l2">0 / 835</span></span>
+            <span class="track"><span class="fill" id="f-l2"></span></span>
+          </span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5.5l6.5 6.5L9 18.5"/></svg>
+        </button>
+
+        <button class="row r3 rise" style="--i:5" data-id="l3" type="button" aria-label="레벨 3 단어">
+          <span class="tile">
+            <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+              <path d="M32 56V31" stroke="#3f9f78" stroke-width="3.2" stroke-linecap="round"/>
+              <path d="M32 35C20 37 9 29 9 15c14-1 23 6 23 20z" fill="#c4ead3" stroke="#3f9f78" stroke-width="2.8" stroke-linejoin="round"/>
+              <path d="M32 30C32 16 41 9 55 10c1 14-8 23-23 20z" fill="#c4ead3" stroke="#3f9f78" stroke-width="2.8" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="body">
+            <span class="line"><span class="name">레벨 3 단어</span><span class="cnt" id="c-l3">0 / 2176</span></span>
+            <span class="track"><span class="fill" id="f-l3"></span></span>
+          </span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5.5l6.5 6.5L9 18.5"/></svg>
+        </button>
+
+        <button class="row r5 rise" style="--i:6" data-id="l4" type="button" aria-label="레벨 4 단어">
+          <span class="tile">
+            <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+              <path d="M32 12 5 25l27 13 27-13z" fill="#e5dcff" stroke="#6b5bd6" stroke-width="2.8" stroke-linejoin="round"/>
+              <path d="M16 32v12c0 4 7.2 8 16 8s16-4 16-8V32" stroke="#6b5bd6" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M59 25v17" stroke="#6b5bd6" stroke-width="2.8" stroke-linecap="round"/>
+              <circle cx="59" cy="46" r="2.6" fill="#e5dcff" stroke="#6b5bd6" stroke-width="2.4"/>
+            </svg>
+          </span>
+          <span class="body">
+            <span class="line"><span class="name">레벨 4 단어</span><span class="cnt" id="c-l4">0 / 1152</span></span>
+            <span class="track"><span class="fill" id="f-l4"></span></span>
+          </span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5.5l6.5 6.5L9 18.5"/></svg>
+        </button>
+
+        <button class="row r4 rise" style="--i:7" data-id="games" type="button" aria-label="게임">
+          <span class="tile">
+            <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+              <path d="M32 7l7.5 15.2 16.8 2.4-12.2 11.9 2.9 16.7L32 45.2l-15 8 2.9-16.7L7.7 24.6l16.8-2.4z" fill="#ffe2a6" stroke="#f0a03c" stroke-width="3" stroke-linejoin="round" transform="translate(0 2)"/>
+            </svg>
+          </span>
+          <span class="body">
+            <span class="line"><span class="name">게임</span><span class="cnt" id="c-games">0 / 4</span></span>
+            <span class="track"><span class="fill" id="f-games"></span></span>
+          </span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5.5l6.5 6.5L9 18.5"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <nav class="nav" aria-label="메뉴">
+      <span class="arch" aria-hidden="true"></span>
+      <button class="tab on" data-nav="home" type="button" aria-current="page">
+        <svg viewBox="0 0 28 28" aria-hidden="true"><path d="M14 3.6 3.6 12.7c-.4.4-.1 1.1.4 1.1H6v9.2c0 .6.4 1 1 1h4.6v-6h4.8v6H21c.6 0 1-.4 1-1v-9.2h2c.5 0 .8-.7.4-1.1z" fill="url(#gNav)" stroke="#7a66e3" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <span>홈</span>
+      </button>
+      <button class="tab" data-nav="decks" type="button">
+        <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5.5" y="6.5" width="17" height="17" rx="4" fill="#f4f3ff"/><path d="M10.2 6.5V5c0-.9.7-1.6 1.6-1.6h4.4c.9 0 1.6.7 1.6 1.6v1.5"/></svg>
+        <span>덱</span>
+      </button>
+      <button class="fab" id="fab" type="button" aria-label="추가">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+      </button>
+      <button class="tab" data-nav="stats" type="button">
+        <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" aria-hidden="true"><rect x="4.8" y="14" width="4.6" height="9.5" rx="1.5" fill="#f4f3ff"/><rect x="11.7" y="8" width="4.6" height="15.5" rx="1.5" fill="#f4f3ff"/><rect x="18.6" y="4" width="4.6" height="19.5" rx="1.5" fill="#f4f3ff"/></svg>
+        <span>통계</span>
+      </button>
+      <button class="tab" data-nav="settings" type="button">
+        <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="14" cy="14" r="8.6" stroke-width="3.4" stroke-dasharray="3.4 3.4" /><circle cx="14" cy="14" r="7" stroke-width="1.9" fill="#f4f3ff"/><circle cx="14" cy="14" r="2.8" stroke-width="1.9"/></svg>
+        <span>설정</span>
+      </button>
+    </nav>
+
+  </section>
+
+  <!-- ========== 3) تفاصيل المستوى ========== -->
+  <section class="screen level" id="s-level" hidden aria-label="레벨">
+    <div class="lscroll" id="lscroll">
+      <header class="lhead">
+        <button id="lBack" type="button" aria-label="뒤로">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 4.5 7.5 12 15 19.5"/></svg>
+        </button>
+        <h1 class="ltitle"><span id="lTitle">레벨 1 단어</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 14.6A8.6 8.6 0 0 1 9.4 4.4a8.6 8.6 0 1 0 10.2 10.2z" fill="#f8a9c9" stroke="#f08ab3" stroke-width="1.3" stroke-linejoin="round"/></svg>
+        </h1>
+        <button id="lGear" type="button" aria-label="설정">
+          <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="14" cy="14" r="8.6" stroke-width="3.2" stroke-dasharray="3.4 3.4"/><circle cx="14" cy="14" r="7" stroke-width="1.9"/><circle cx="14" cy="14" r="2.8" stroke-width="1.9"/></svg>
+        </button>
+      </header>
+
+      <img class="banner rise" style="--i:0" alt="" src="assets/banner.webp">
+
+      <div class="lbody">
+        <div class="prog rise" style="--i:1">
+          <div class="t"><b>진행도</b><span id="lCount">0 / 836</span></div>
+          <div class="bar"><div class="track"><span class="fill" id="lFill"></span></div><span class="pct" id="lPct">0%</span></div>
+        </div>
+
+        <button class="start rise" id="lStart" style="--i:2" type="button">학습 시작하기
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+        </button>
+
+        <div class="menu rise" style="--i:3">
+          <button class="mi" data-act="info" type="button">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4.6" width="14" height="16" rx="3.2"/><path d="M9.4 4.6v-.9c0-.5.4-.9.9-.9h3.4c.5 0 .9.4.9.9v.9"/><path d="M9.6 10.2h4.8M12 10.2v6"/></svg>
+            <span class="lb">덱 정보</span>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5.5l6.5 6.5L9 18.5"/></svg>
+          </button>
+          <button class="mi" data-act="edit" type="button">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.5 4H8A4 4 0 0 0 4 8v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4v-3.5"/><path d="M17.6 3.5a1.9 1.9 0 0 1 2.7 2.7l-8 8-3.7 1 1-3.7z"/></svg>
+            <span class="lb">카드 편집</span>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5.5l6.5 6.5L9 18.5"/></svg>
+          </button>
+          <button class="mi" data-act="log" type="button">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.6 3.6h8.8a3.1 3.1 0 0 1 3.1 3.1v10.6a3.1 3.1 0 0 1-3.1 3.1H7.6a3.1 3.1 0 0 1-3.1-3.1V6.7a3.1 3.1 0 0 1 3.1-3.1z"/><path d="M8.4 9h7.2M8.4 12.6h7.2M8.4 16.2h4"/></svg>
+            <span class="lb">학습 기록</span>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5.5l6.5 6.5L9 18.5"/></svg>
+          </button>
+          <button class="mi" data-act="share" type="button">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6.2" cy="12" r="2.6"/><circle cx="17.6" cy="6" r="2.6"/><circle cx="17.6" cy="18" r="2.6"/><path d="M8.5 10.8l6.8-3.6M8.5 13.2l6.8 3.6"/></svg>
+            <span class="lb">공유하기</span>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5.5l6.5 6.5L9 18.5"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="lart rise" style="--i:4"><img alt="" src="assets/bottom.webp"></div>
+    </div>
+  </section>
+
+  <!-- ================= شاشة التعلّم ================= -->
+  <section class="screen study" id="s-study" hidden aria-label="학습">
+    <div class="sb m"></div><div class="sb t"></div><div class="sb b"></div>
+    <div class="stop">
+      <button type="button" id="sClose" aria-label="رجوع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 4.5 7.5 12 15 19.5"/></svg></button>
+      <div class="scount" id="sCount" dir="ltr">1 / 15</div>
+    </div>
+    <div class="stackwrap">
+      <div class="pg a"></div><div class="pg b"></div>
+      <div class="card" id="card" role="button" tabindex="0" aria-label="اقلب البطاقة">
+        <div class="chip"><svg viewBox="0 0 32 32" aria-hidden="true"><clipPath id="fl"><circle cx="16" cy="16" r="15"/></clipPath><g clip-path="url(#fl)"><rect width="32" height="32" fill="#fff"/><path d="M16 9a7 7 0 0 1 0 14 3.5 3.5 0 0 1 0-7 3.5 3.5 0 0 0 0-7z" fill="#cd2e3a"/><path d="M16 23a7 7 0 0 1 0-14 3.5 3.5 0 0 1 0 7 3.5 3.5 0 0 0 0 7z" fill="#0047a0"/><g stroke="#111" stroke-width="1.4" stroke-linecap="round"><path d="M5 7l3-2M6.2 8.8l3-2M4 9.6l3-2"/><path d="M27 7l-3-2M25.8 8.8l-3-2M28 9.6l-3-2"/><path d="M5 25l3 2M6.2 23.2l3 2M4 22.4l3 2"/><path d="M27 25l-3 2M25.8 23.2l-3 2M28 22.4l-3 2"/></g></g><circle cx="16" cy="16" r="15" fill="none" stroke="#e7d4e2" stroke-width="1"/></svg>한국어</div>
+        <svg class="sparkles" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3.5l4.9 10 11 1.6-8 7.7 1.9 10.9L20 28.6l-9.8 5.1 1.9-10.9-8-7.7 11-1.6z" fill="#fbd98a" stroke="#f3b95c" stroke-width="2" stroke-linejoin="round"/></svg>
+        <div class="wordrow"><div class="word" id="word" lang="ko">사랑</div><button type="button" class="spk" id="spk" aria-label="استمع"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 10.5h4.2L14 5.2v17.6l-6.3-5.3H3.5z"/><path d="M18 10.2a5.6 5.6 0 0 1 0 7.6M21.4 7a10 10 0 0 1 0 14"/></svg></button></div>
+        <div class="hint">카드를 탭하세요</div>
+        <div class="ans" id="ans"><div class="mean ar" id="mean"></div><div class="sep"></div><div class="exko" id="exko" lang="ko"></div><div class="exar ar" id="exar"></div></div>
+        <svg class="clouds" viewBox="0 0 100 60" aria-hidden="true"><path d="M17 4l3.6 7.4 8 1.2-5.8 5.7 1.4 8L17 22.4l-7.2 3.9 1.4-8L5.4 12.600l8-1.200z" fill="#e8dcf9" stroke="#cdbdf0" stroke-width="1.6" stroke-linejoin="round"/><path d="M33 31l3 6.200 6.800 1-4.900 4.800 1.200 6.800-6.100-3.200-6.100 3.200 1.200-6.800-4.900-4.800 6.800-1z" fill="#fadbe8" stroke="#f1b9d0" stroke-width="1.6" stroke-linejoin="round"/><path d="M52 52c-5 0-8-3-8-7 0-4 3-6.500 7-6.500 1.200-4.500 5.500-7 10-6 3.500-3 9-2 11 2.300 4.200-.5 8 2.500 8 6.700 0 4-3 6.500-7 6.500z" fill="#e3ebfb" stroke="#bccaf0" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <img class="catheart" alt="" src="assets/cat_heart.webp">
+      </div>
+    </div>
+    <div class="sheet">
+      <div class="rates">
+        <button type="button" class="rate r-again" data-r="1"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="20" cy="20" r="17.5" fill="#fff4f8"/><circle cx="14" cy="17" r="1.6" fill="currentColor" stroke="none"/><circle cx="26" cy="17" r="1.6" fill="currentColor" stroke="none"/><path d="M13.5 28c2-3.4 11-3.4 13 0"/></svg><b>Again</b><i data-l="1"></i></button>
+        <button type="button" class="rate r-hard" data-r="2"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="20" cy="20" r="17.5" fill="#fffaf0"/><circle cx="14" cy="17" r="1.6" fill="currentColor" stroke="none"/><circle cx="26" cy="17" r="1.6" fill="currentColor" stroke="none"/><path d="M13.5 24c2.6 3.2 10.4 3.2 13 0"/></svg><b>Hard</b><i data-l="2"></i></button>
+        <button type="button" class="rate r-good" data-r="3"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="20" cy="20" r="17.5" fill="#f3fcf7"/><circle cx="14" cy="17" r="1.6" fill="currentColor" stroke="none"/><circle cx="26" cy="17" r="1.6" fill="currentColor" stroke="none"/><path d="M12.5 23.5c2.4 4.6 12.6 4.6 15 0"/></svg><b>Good</b><i data-l="3"></i></button>
+        <button type="button" class="rate r-easy" data-r="4"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><circle cx="20" cy="20" r="17.5" fill="#f4f0ff"/><path d="M20 9.5l3.2 6.6 7.2 1-5.2 5.1 1.2 7.2L20 25.9l-6.4 3.5 1.2-7.2-5.2-5.1 7.2-1z" fill="#fff"/></svg><b>Easy</b><i data-l="4"></i></button>
+        <button type="button" class="reveal" id="reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12c3-5 6-7.5 10-7.5s7 2.5 10 7.5c-3 5-6 7.5-10 7.5S5 17 2 12z"/><circle cx="12" cy="12" r="3"/></svg>정답 보기</button>
+      </div>
+      <div class="msg"><img alt="" src="assets/cat_pill.webp"><span>오늘도 수고했어요! ♡</span></div>
+    </div>
+    <div class="artsp"></div>
+    <div class="fin" id="fin" role="dialog" aria-modal="true" aria-label="انتهت الجلسة">
+      <div class="box">
+        <img alt="" src="assets/cat_heart.webp">
+        <h2>오늘도 수고했어요!</h2>
+        <p class="note ar" id="finNote"></p>
+        <div class="stats">
+          <div class="st"><b id="fCards">0</b><span class="ar">بطاقات</span></div>
+          <div class="st"><b id="fAcc">0%</b><span class="ar">الدقة</span></div>
+          <div class="st"><b id="fMin">0</b><span class="ar">دقائق</span></div>
+        </div>
+        <button type="button" class="btn1" id="fMore">더 학습하기</button>
+        <button type="button" class="btn2" id="fHome">홈으로</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</div>
+
+<script src="js/cards.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
